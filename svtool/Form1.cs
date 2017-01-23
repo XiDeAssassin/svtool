@@ -16,5 +16,19 @@ namespace svtool
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Func acf = new Func();
+            acf.GetDefaultSteamPath();
+            if(acf.LanguageJudge())
+            {
+                label1.Text = "English";
+            }
+            else
+            {
+                label1.Text = "Japanese";
+            }
+        }
     }
 }
