@@ -26,7 +26,7 @@ namespace svtool
         {
             Func acf = new Func();
             acf.GetDefaultSteamPath();
-            label4.Text = acf.GetDefaultSteamPath() + "/common/Shadowverse";
+            label4.Text = (acf.GetDefaultSteamPath() + "/common/Shadowverse").Replace("/","\\");
             if (acf.LanguageJudge())
             {
                 label2.Text = "English";
@@ -35,7 +35,20 @@ namespace svtool
             {
                 label2.Text = "Japanese";
             }
-            
+
+            if (acf.VoiceJudge())
+            {
+                label5.Text = "English";
+            }
+            else
+            {
+                label5.Text = "Japanese";
+            }
+
+            if (!acf.VoiceJudge())
+            {
+                button1.Enabled = true;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
