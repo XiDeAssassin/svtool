@@ -45,9 +45,13 @@ namespace svtool
                 label5.Text = "Japanese";
             }
 
-            if (!acf.VoiceJudge())
+            if(acf.LanguageJudge()!=acf.VoiceJudge())
             {
-                button1.Enabled = true;
+                button1.Text = "还原语音";
+            }
+            else
+            {
+                button1.Text = "更改语音";
             }
         }
 
