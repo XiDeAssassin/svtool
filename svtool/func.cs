@@ -14,7 +14,6 @@ namespace svtool
             {
                 keyValue = currentKey.GetValue("SteamPath").ToString();
             }
-            Console.WriteLine("Your Steam Path is {0}", keyValue);
             steamlibrary = keyValue + "/steamapps";
             return keyValue;
         }
@@ -39,6 +38,21 @@ namespace svtool
                     return BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", string.Empty);
                 }
             }
+        }
+
+        public bool VoiceJudge()
+        {
+            string voicefilemd5 = "";
+            voicefilemd5 = MD5file(steamlibrary + "/common/Shadowverse/Shadowverse_Data/StreamingAssets/v/vo_101_000_001.acb");
+            if(voicefilemd5 == "3EF567DE7D68B57F80C5890AC50145AF")// EN is D6CF6E4066CDB28FA198B69F8900129D
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        
         }
     }
 }
