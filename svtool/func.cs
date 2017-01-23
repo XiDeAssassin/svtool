@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.Win32;
+using System.Security.Cryptography;
 namespace svtool
 {
     class Func
@@ -29,6 +30,15 @@ namespace svtool
             }
             return text.Contains("english");
         }
-
+        public string MD5file(string filename)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(filename))
+                {
+                    return BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", string.Empty);
+                }
+            }
+        }
     }
 }

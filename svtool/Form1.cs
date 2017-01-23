@@ -19,16 +19,30 @@ namespace svtool
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
             Func acf = new Func();
             acf.GetDefaultSteamPath();
-            if(acf.LanguageJudge())
+            label4.Text = acf.GetDefaultSteamPath() + "/common/Shadowverse";
+            if (acf.LanguageJudge())
             {
-                label1.Text = "English";
+                label2.Text = "English";
             }
             else
             {
-                label1.Text = "Japanese";
+                label2.Text = "Japanese";
             }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Func md5test = new Func();
+            label4.Text = md5test.MD5file("d:/test.acf");
+            
         }
     }
 }
