@@ -12,6 +12,7 @@ namespace svtool
 {
     public partial class Form1 : Form
     {
+        Func acf = new Func();
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace svtool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Func acf = new Func();
+
             acf.GetDefaultSteamPath();
             label4.Text = (acf.GetDefaultSteamPath() + "/common/Shadowverse").Replace("/","\\");
             if (acf.LanguageJudge())
@@ -57,7 +58,9 @@ namespace svtool
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog filedialog = new OpenFileDialog();
+            filedialog.InitialDirectory = acf.GetDefaultSteamPath().Replace("/","\\");
+            filedialog.ShowDialog();
 
         }
     }
