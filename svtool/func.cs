@@ -15,7 +15,7 @@ namespace svtool
                 keyValue = currentKey.GetValue("SteamPath").ToString();
             }
             steamlibrary = keyValue + "/steamapps";
-            return steamlibrary;
+            return steamlibrary.Replace("/","\\");
         }
 
         public bool LanguageJudge()

@@ -59,8 +59,13 @@ namespace svtool
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog filedialog = new OpenFileDialog();
-            filedialog.InitialDirectory = gamepath;
-            filedialog.ShowDialog();
+            FolderBrowserDialog folder = new FolderBrowserDialog();
+            folder.RootFolder = Environment.SpecialFolder.ProgramFilesX86;
+            if (folder.ShowDialog() == DialogResult.OK)
+            {
+                gamepath = folder.SelectedPath.ToString();
+                label4.Text = gamepath;
+            }
         }
             
 
