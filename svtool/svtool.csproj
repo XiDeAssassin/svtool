@@ -39,7 +39,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>175x175bb.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\175x175bb.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>svtool.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -92,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="175x175bb.ico" />
+    <None Include="Resources\175x175bb.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

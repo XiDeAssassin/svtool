@@ -13,6 +13,7 @@ namespace svtool
     public partial class Form1 : Form
     {
         Func acf = new Func();
+        string gamepath = "";
         public Form1()
         {
             InitializeComponent();
@@ -25,9 +26,8 @@ namespace svtool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            acf.GetDefaultSteamPath();
-            label4.Text = (acf.GetDefaultSteamPath() + "/common/Shadowverse").Replace("/","\\");
+            gamepath = (acf.GetDefaultSteamLibraryPath() + "/common/Shadowverse/").Replace("/","\\");
+            label4.Text = gamepath;
             if (acf.LanguageJudge())
             {
                 label2.Text = "English";
@@ -46,22 +46,24 @@ namespace svtool
                 label5.Text = "Japanese";
             }
 
-            if(acf.LanguageJudge()!=acf.VoiceJudge())
+            if(label2.Text==label5.Text)
             {
-                button1.Text = "还原语音";
+                button1.Text = "修改语音";
             }
             else
             {
-                button1.Text = "更改语音";
+                button1.Text = "还原语音";
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog filedialog = new OpenFileDialog();
-            filedialog.InitialDirectory = acf.GetDefaultSteamPath().Replace("/","\\");
+            filedialog.InitialDirectory = gamepath;
             filedialog.ShowDialog();
-
         }
+            
+
+    
     }
 }

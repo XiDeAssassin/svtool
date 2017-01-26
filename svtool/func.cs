@@ -8,14 +8,14 @@ namespace svtool
     {
         string keyValue = "";
         string steamlibrary = "";
-        public string GetDefaultSteamPath()
+        public string GetDefaultSteamLibraryPath()
         {
             using (RegistryKey currentKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Valve\\Steam", false))
             {
                 keyValue = currentKey.GetValue("SteamPath").ToString();
             }
             steamlibrary = keyValue + "/steamapps";
-            return keyValue;
+            return steamlibrary;
         }
 
         public bool LanguageJudge()
