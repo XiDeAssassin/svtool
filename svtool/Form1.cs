@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace svtool
@@ -21,12 +14,16 @@ namespace svtool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            //按下后先检查目前按钮文字是啥然后决定调用的方法
+            if (button1.Text== "修改语音")
+            {
+                acf.copyfile(gamepath+ "\\Shadowverse_Data\\StreamingAssets\\v");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gamepath = (acf.GetDefaultSteamLibraryPath() + "/common/Shadowverse/").Replace("/","\\");
+            gamepath = (acf.GetDefaultSteamLibraryPath() + "/common/Shadowverse").Replace("/","\\");
             label4.Text = gamepath;
             if (acf.LanguageJudge())
             {

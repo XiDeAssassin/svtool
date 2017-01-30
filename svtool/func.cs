@@ -54,5 +54,17 @@ namespace svtool
             }
         
         }
+
+        public void copyfile(string path)
+        {
+            string filename = "";
+            string sourcePath = "";
+            string targetPath = "";
+            string[] filenames= Directory.GetFiles(path);
+            foreach(string s in filenames)
+            {
+             
+            }
+        }
     }
 }
