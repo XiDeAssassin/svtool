@@ -12,15 +12,6 @@ namespace svtool
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //按下后先检查目前按钮文字是啥然后决定调用的方法
-            if (button1.Text== "修改语音")
-            {
-                acf.copyfile(gamepath+ "\\Shadowverse_Data\\StreamingAssets\\v");
-            }
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             gamepath = (acf.GetDefaultSteamLibraryPath() + "/common/Shadowverse").Replace("/","\\");
@@ -45,7 +36,7 @@ namespace svtool
 
             if(label2.Text==label5.Text)
             {
-                button1.Text = "修改语音";
+                button1.Text = "备份语音";
             }
             else
             {
@@ -55,7 +46,6 @@ namespace svtool
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog filedialog = new OpenFileDialog();
             FolderBrowserDialog folder = new FolderBrowserDialog();
             folder.RootFolder = Environment.SpecialFolder.ProgramFilesX86;
             if (folder.ShowDialog() == DialogResult.OK)
@@ -64,8 +54,25 @@ namespace svtool
                 label4.Text = gamepath;
             }
         }
-            
 
-    
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //按下后先检查目前按钮文字是啥然后决定调用的方法
+            if (button1.Text == "修改语音")
+            {//还要检查现在的语言环境l
+                if (label5.Text == "English")
+                {
+                    acf.backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", true);
+                }
+                else
+                {
+                    acf.backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", false);
+                }
+
+            }
+        }
+
+
+
     }
 }
