@@ -83,7 +83,11 @@ namespace svtool
                     File.Copy(s, destFile, true);
                 }
             }
-            
+        }
+
+        public void overwritefile()
+        {
+
         }
     }
 }

@@ -58,8 +58,8 @@ namespace svtool
         private void button1_Click(object sender, EventArgs e)
         {
             //按下后先检查目前按钮文字是啥然后决定调用的方法
-            if (button1.Text == "修改语音")
-            {//还要检查现在的语言环境l
+            if (button1.Text == "备份语音")
+            {//还要检查现在的语言环境
                 if (label5.Text == "English")
                 {
                     acf.backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", true);
@@ -70,6 +70,7 @@ namespace svtool
                 }
 
             }
+            label7.Text = "备份已完成";
         }
 
 
