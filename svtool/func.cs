@@ -55,7 +55,7 @@ namespace svtool
         
         }
 
-        public void backupfile(string path,bool d)//d=true 目前是EN备份去EN| d=false则是JP
+        public void Backupfile(string path,bool d)//d=true 目前是EN备份去EN| d=false则是JP
         {
             string sourcePath = path;
             string targetPath = "";
@@ -85,7 +85,7 @@ namespace svtool
             }
         }
 
-        public void overwritefile()
+        public void Overwritefile()
         {
 
         }

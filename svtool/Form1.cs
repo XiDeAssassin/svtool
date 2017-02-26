@@ -62,11 +62,11 @@ namespace svtool
             {//还要检查现在的语言环境
                 if (label5.Text == "English")
                 {
-                    acf.backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", true);
+                    acf.Backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", true);
                 }
                 else
                 {
-                    acf.backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", false);
+                    acf.Backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", false);
                 }
 
             }
