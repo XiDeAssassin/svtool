@@ -55,36 +55,6 @@ namespace svtool
         
         }
 
-        public void Backupfile(string path,bool d)//d=true 目前是EN备份去EN| d=false则是JP
-        {
-            string sourcePath = path;
-            string targetPath = "";
-            string filename = "";
-            string destFile = "";
-            if (d)
-            {
-                targetPath = path + "_EN";
-            }
-            else
-            {
-                targetPath = path + "_JP";
-            }
-            if (!Directory.Exists(targetPath))
-            {
-                Directory.CreateDirectory(targetPath);
-            }
-            if (Directory.Exists(targetPath))
-            {
-                string[] filenames = Directory.GetFiles(sourcePath);
-                foreach (string s in filenames)
-                {
-                    filename = Path.GetFileName(s);
-                    destFile = Path.Combine(targetPath, filename);
-                    File.Copy(s, destFile, true);
-                }
-            }
-        }
-
         public void Overwritefile()
         {
 

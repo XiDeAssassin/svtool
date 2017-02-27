@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace svtool
@@ -44,10 +45,46 @@ namespace svtool
             }
         }
 
+        public void Backupfile(string path, bool d)//d=true 目前是EN备份去EN| d=false则是JP
+        {
+            string sourcePath = path;
+            string targetPath = "";
+            string filename = "";
+            string destFile = "";
+            if (d)
+            {
+                targetPath = path + "_EN";
+            }
+            else
+            {
+                targetPath = path + "_JP";
+            }
+            if (!Directory.Exists(targetPath))
+            {
+                Directory.CreateDirectory(targetPath);
+            }
+            if (Directory.Exists(targetPath))
+            {
+                string[] filenames = Directory.GetFiles(sourcePath);
+                int progressvalue = 0;
+                progressBar1.Maximum = filenames.Length;
+                foreach (string s in filenames)
+                {
+                    filename = Path.GetFileName(s);
+                    destFile = Path.Combine(targetPath, filename);
+                    File.Copy(s, destFile, true);
+                    progressvalue++;
+                    progressBar1.Value = progressvalue;
+                }
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folder = new FolderBrowserDialog();
-            folder.RootFolder = Environment.SpecialFolder.ProgramFilesX86;
+            FolderBrowserDialog folder = new FolderBrowserDialog()
+            {
+                RootFolder = Environment.SpecialFolder.ProgramFilesX86
+            };
             if (folder.ShowDialog() == DialogResult.OK)
             {
                 gamepath = folder.SelectedPath.ToString();
@@ -62,16 +99,17 @@ namespace svtool
             {//还要检查现在的语言环境
                 if (label5.Text == "English")
                 {
-                    acf.Backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", true);
+                    Backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", true);
                 }
                 else
                 {
-                    acf.Backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", false);
+                    Backupfile(gamepath + "\\Shadowverse_Data\\StreamingAssets\\v", false);
                 }
 
             }
             label7.Text = "备份已完成";
         }
+
 
 
 
