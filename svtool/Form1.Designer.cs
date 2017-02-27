@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
+            this.Button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Button2 = new System.Windows.Forms.Button();
+            this.Button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(684, 54);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "切换语音语言";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Button1.Location = new System.Drawing.Point(684, 54);
+            this.Button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Button1.Name = "button1";
+            this.Button1.Size = new System.Drawing.Size(119, 38);
+            this.Button1.TabIndex = 0;
+            this.Button1.Text = "切换语音语言";
+            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
@@ -121,24 +121,24 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(684, 165);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 35);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "选择目录";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Button2.Location = new System.Drawing.Point(684, 165);
+            this.Button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Button2.Name = "button2";
+            this.Button2.Size = new System.Drawing.Size(119, 35);
+            this.Button2.TabIndex = 7;
+            this.Button2.Text = "选择目录";
+            this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.button3.Location = new System.Drawing.Point(684, 270);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 36);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "汉化";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Button3.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.Button3.Location = new System.Drawing.Point(684, 270);
+            this.Button3.Name = "button3";
+            this.Button3.Size = new System.Drawing.Size(119, 36);
+            this.Button3.TabIndex = 8;
+            this.Button3.Text = "汉化";
+            this.Button3.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -162,15 +162,15 @@
             this.ClientSize = new System.Drawing.Size(863, 352);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Button3);
+            this.Controls.Add(this.Button2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Button1);
             this.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -184,15 +184,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Button2;
+        private System.Windows.Forms.Button Button3;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.ProgressBar progressBar1;
     }

@@ -29,6 +29,7 @@ namespace svtool
             }
             return text.Contains("english");
         }
+
         public string MD5file(string filename)
         {
             using (var md5 = MD5.Create())
@@ -55,9 +56,28 @@ namespace svtool
         
         }
 
-        public void Overwritefile()
+        public void Overwritefile(string path)
         {
+            string sourcePath = path;
+            string targetPath = "";
+            string filename = "";
+            string destFile = "";
+            if (!Directory.Exists(targetPath))
+            {
+                Directory.CreateDirectory(targetPath);
+            }
+            else
+            {
+                string[] filenames = Directory.GetFiles(sourcePath);
+                foreach(string s in filenames)
+                {
+                    filename = Path.GetFileName(s);
+                    destFile = Path.Combine(targetPath, filename);
+                    File.Copy(s, destFile, true);
+                }
+            }
 
         }
+
     }
 }

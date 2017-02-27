@@ -37,11 +37,11 @@ namespace svtool
 
             if(label2.Text==label5.Text)
             {
-                button1.Text = "备份语音";
+                Button1.Text = "备份语音";
             }
             else
             {
-                button1.Text = "还原语音";
+                Button1.Text = "还原语音";
             }
         }
 
@@ -63,7 +63,7 @@ namespace svtool
             {
                 Directory.CreateDirectory(targetPath);
             }
-            if (Directory.Exists(targetPath))
+            else
             {
                 string[] filenames = Directory.GetFiles(sourcePath);
                 int progressvalue = 0;
@@ -79,7 +79,7 @@ namespace svtool
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folder = new FolderBrowserDialog()
             {
@@ -92,10 +92,10 @@ namespace svtool
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             //按下后先检查目前按钮文字是啥然后决定调用的方法
-            if (button1.Text == "备份语音")
+            if (Button1.Text == "备份语音")
             {//还要检查现在的语言环境
                 if (label5.Text == "English")
                 {
